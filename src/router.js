@@ -12,6 +12,7 @@ import Order from './pages/order'
 import OrderConfirm from './pages/orderConfirm'
 import OrderList from './pages/orderList'
 import OrderPay from './pages/orderPay'
+import AliPay from './pages/alipay'
 
 // 使用插件
 // Vue.use(Router);
@@ -27,7 +28,7 @@ const router = createRouter({
             path:'/',
             name:'home',
             component:Home,
-            // redirect:'/index',
+            redirect:'/index',
             children:[
                 {
                     path:'/index',
@@ -56,17 +57,21 @@ const router = createRouter({
             component:Order,
             children:[
                 {
-                    path: '/list',
+                    path: 'list',
                     name: 'order-list',
                     component:OrderList,
                 },{
-                    path: '/confirm',
+                    path: 'confirm',
                     name: 'order-confirm',
                     component:OrderConfirm,
                 },{
-                    path: '/pay',
+                    path: 'pay',
                     name: 'order-pay',
                     component:OrderPay,
+                },{
+                    path: 'alipay',
+                    name: 'alipay',
+                    component:AliPay,
                 }
             ]
         },
