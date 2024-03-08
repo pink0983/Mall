@@ -1,11 +1,11 @@
 // storage 封装
 const STORAGE_KEY = 'mall';
 export default {
-    serItem(key,value,modele_name){
-        if (modele_name) {
-            let val = this.getStorage(modele_name);
+    serItem(key,value,module_name){
+        if (module_name) {
+            let val = this.getStorage(module_name);
             val[key] = value;
-            this.setItem(modele_name, val);
+            this.setItem(module_name, val);
         } else {
             let val = this.getStorage();
             val[key] = value;
@@ -14,9 +14,9 @@ export default {
         
 
     },
-    getItem(key,modele_name){
-        if (modele_name){
-            let val = this.getStorage(modele_name);
+    getItem(key,module_name){
+        if (module_name){
+            let val = this.getStorage(module_name);
             if (val) return val[key]
         }
         return this.getStorage()[key];
@@ -26,10 +26,12 @@ export default {
          return JSON.parse(window.sessionStorage.getItem(mall) || '{}');
 
     },
-    clear(key,modele_name){
+    clear(key,module_name){
+        console.log(this);
         let val = this.getStorage();
-        if (modele_name){
-            delete val[modele_name][key];
+        if (module_name){
+            if (!val[module_name])return;
+            delete val[module_name][key];
         }else {
             delete val[key];
         }

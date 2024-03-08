@@ -5,14 +5,25 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import storage from './storage/index'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+  },
+  data(){
+    return {
+      res:{}
+ 
+    }
+  },
+  mounted(){
+    // storage.serItem('a',1 ) 
+    this.axios.get('/user/login').then((res)=>{
+      this.res = res;
+    });
   }
-}
+  }
 </script>
 
 <style>
