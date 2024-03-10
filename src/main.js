@@ -4,6 +4,8 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
+
+// console.log(Vue);
 // import env from './env'
 //mock开关
 const mock = true;
@@ -32,9 +34,10 @@ axios.interceptors.response.use(function(response){
 
 const app = createApp(App)
 app.use(router)
+app.config.globalProperties.$axios = axios;
 app.mount('#app')
 
 
-Vue.use(VueAxios,axios);
-Vue.config.productionTip = false;
+// Vue.use(VueAxios,axios);
+// Vue.config.productionTip = false;
 // createApp(App).mount('#app')

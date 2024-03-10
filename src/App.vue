@@ -19,7 +19,9 @@ export default {
   },
   mounted(){
     // storage.serItem('a',1 ) 
-    this.axios.get('/user/login').then((res)=>{
+    console.log(this.$axios);
+    this.$axios.get('/user/login').then((res)=>{
+      console.log(res)
       this.res = res;
     });
   }
