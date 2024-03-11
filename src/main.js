@@ -23,6 +23,7 @@ axios.interceptors.response.use(function(response){
     if(res.status == 0){
         return res.data;
     } else if (res.status == 10){
+        // 未登录就跳转到登录页  这里this并不指向vue 所以要用此方法进行跳转
         window.location.href = '/#/login';
     }else{
         alert(res.msg);
