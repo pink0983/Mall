@@ -9,5 +9,5 @@
     width: $w;
     height: $h;
     background:url($img) no-repeat center;
-    background-size: contain;
+    background-size: $size;
 }

@@ -21,7 +21,7 @@
 <style lang="scss">
  .footer{
     height: 234px;
-    border-top: #FF6600;
+    border-top: 4px solid #FF6600;
     background-color: #333333;
     color: #999999;
     font-size: 16px;
