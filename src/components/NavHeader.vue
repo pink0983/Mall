@@ -222,6 +222,7 @@
                 display: inline-block;
                 width: 55px;
                 height: 55px;
+                overflow: hidden;
                 background-color: #FF6600;
                 a{
                     display: inline-block;
