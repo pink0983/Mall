@@ -25,18 +25,6 @@
                 <div class="item-menu">
                     <span>小米手机</span>
                     <div class="children">
-                        <!-- <ul>
-                            <li class="product">  -->
-                                <!-- a标签中通过target方式打开新页面 -->
-                                <!-- <a href="" target="_blank">
-                                    <div class="pro-img">
-                                        <img src="./../../public/imgs/nav-img/nav-1.png">
-                                    </div>
-                                    <div class="pro-name">小米cc9</div>
-                                    <div class="pro-price">1799</div>
-                                </a>
-                            </li>
-                        </ul> -->
                         <ul>
                             <li class="product" v-for="(item,index) in phoneList" :key="index"> 
                                 <!-- a标签中通过target方式打开新页面 -->
@@ -160,9 +148,12 @@
                 return '￥'+ val.toFixed(2) + '元'
             }
         },
-        mounted(){
-            // this.getProductList();
-        },
+        // onMounted(){
+        //     this.getProductList();
+        // },
+        // mounted(){
+        //     this.getProductList();
+        // },
         methods:{
             login(){
                 // 路由跳转
@@ -176,7 +167,7 @@
             //         }
             //     }).then((res)=>{
             //             this.phoneList = res.list;
-            //         
+                    
             //     })
             // },
             gotoCart(){
@@ -215,11 +206,6 @@
                 color: #ffffff;
                 .icon-cart{
                     @include bgImg(16px,12px,'/public/imgs/icon-cart-checked.png');
-                    // display: inline-block;
-                    // width: 16px;
-                    // height: 12px;
-                    // background:url('/public/imgs/icon-cart-checked.png') no-repeat center;
-                    // background-size: contain;
                     margin-right: 4px;
                 }
             }
@@ -245,22 +231,11 @@
                         // 占位
                         content: '';
                         @include bgImg(55px,55px,'/public/imgs/logo-mi.png',55px);
-                        // display: inline-block;
-                        // width: 55px;
-                        // height: 55px;
-                        // background: url('/public/imgs/logo-mi.png') no-repeat center;
-                        // background-size: 55px;
-                        // margin-left: -55px;
                         transition:margin .2s;
                     }
                     &:after{
                         content: '';
                         @include bgImg(55px,55px,'/public/imgs/mi-home.png',55px);
-                        // display: inline-block;
-                        // width: 55px;
-                        // height: 55px;
-                        // background: url('/public/imgs/mi-home.png') no-repeat center;
-                        // background-size: 55px;
                     }
                     &:hover:before{
                         margin-left: -55px;
@@ -367,11 +342,6 @@
                      }
                      a{
                         @include bgImg(18px,18px,'/public/imgs/icon-search.png');
-                        // display: inline-block;
-                        // width: 18px;
-                        // height: 18px;
-                        // background: url('/public/imgs/icon-search.png') no-repeat center;
-                        // background-size: contain;
                         margin-left: 17px;
                      }
                 }
