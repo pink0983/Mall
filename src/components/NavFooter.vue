@@ -27,10 +27,9 @@
     font-size: 16px;
     text-align: center;
     .footer-logo{
-        // margin-top: 46px;
+        margin-top: 46px;
         margin-bottom: 31px;
         img{
-            margin-top: 46px;
             width: 53px;
             height: 36px;
             margin-bottom: 13px;
