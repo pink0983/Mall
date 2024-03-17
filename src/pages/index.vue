@@ -3,7 +3,7 @@
         <div class="container">
             <div class="swiper-box">
                 <swiper :options="swiperOption">
-                    <swiper-slide v-for="(item,index) in slideList" :key="index">
+                    <swiper-slide v-for="(item,index) in swiperOption.slideList" :key="index">
                         <a :href="'/#/product/'+item.id"><img :src="item.img"></a>
                     </swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
@@ -60,10 +60,12 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
                     slideList:[
                         {
                             id:'42',
-                            img:'/imgs/slider/slide-1.jpg'
+                            // 使用require可以来加载图片，因为代码在打包的时候就会把图片识别为一个资源给打包进去
+                            img: require('./../../public/imgs/slider/slide-1.jpg')
                         },
                         {
                             id:'45',
+                            // 因为代码在打包之后，会有一个img文件夹存着图片，所以可以直接从/imgs来访问图片
                             img:'/imgs/slider/slide-2.jpg'
                         },
                         {
@@ -76,21 +78,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
                         {
                             id:'',
                             img:'/imgs/slider/slide-5.jpg'
-                        }
-                    ],
-                    adsList:[
-                        {
-                            id:33,
-                            img:'./../../public/imgs/ads/ads-1.png'
-                        },{
-                            id:48,
-                            img:'./../../public/imgs/ads/ads-2.jpg'
-                        },{
-                            id:45,
-                            img:'./../../public/imgs/ads/ads-3.png'
-                        },{
-                            id:47,
-                            img:'./../../public/imgs/ads/ads-4.jpg'
                         }
                     ]
                 }
