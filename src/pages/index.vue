@@ -11,8 +11,16 @@
                     <div class="swiper-button-next" slot="button-next"></div>
                 </swiper>
             </div>
-            <div class="ads-box"></div>
-            <div class="banner"></div>
+            <div class="ads-box">
+                <a :href="'/#/product/'" v-for="(item,index) in  adsList" :key="index">
+                    <img :src="item.img" alt="">
+                </a>
+            </div>
+            <div class="banner">
+                <a href="/#/product/30">
+                    <img src="/imgs/banner-1.png" alt="">
+                </a>
+            </div>
             <div class="product-box"></div>
         </div>
         <service-bar></service-bar>
@@ -52,22 +60,37 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
                     slideList:[
                         {
                             id:'42',
-                            img:'./../../public/imgs/slider/slide-1.jpg'
+                            img:'/imgs/slider/slide-1.jpg'
                         },
                         {
                             id:'45',
-                            img:'./../../public/imgs/slider/slide-2.jpg'
+                            img:'/imgs/slider/slide-2.jpg'
                         },
                         {
                             id:'46',
-                            img:'./../../public/imgs/slider/slide-3.jpg'
+                            img:'/imgs/slider/slide-3.jpg'
                         },{
                             id:'',
-                            img:'./../../public/imgs/slider/slide-4.jpg'
+                            img:'/imgs/slider/slide-4.jpg'
                         },
                         {
                             id:'',
-                            img:'./../../public/imgs/slider/slide-5.jpg'
+                            img:'/imgs/slider/slide-5.jpg'
+                        }
+                    ],
+                    adsList:[
+                        {
+                            id:33,
+                            img:'./../../public/imgs/ads/ads-1.png'
+                        },{
+                            id:48,
+                            img:'./../../public/imgs/ads/ads-2.jpg'
+                        },{
+                            id:45,
+                            img:'./../../public/imgs/ads/ads-3.png'
+                        },{
+                            id:47,
+                            img:'./../../public/imgs/ads/ads-4.jpg'
                         }
                     ]
                 }
@@ -77,12 +100,27 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
     }
 </script>
 <style lang="scss">
+@import './../assets/scss/base.scss';
+@import './../assets/scss/mixin.scss';
+@import './../assets/scss/config.scss';
 .index{
     .swiper-box{
         height: 451px;
         img{
             width: 100%;
         }
+    }
+    .ads-box{
+        @include flex();
+        margin-top: 14px;
+        margin-bottom: 31px;
+        a{
+            width: 296px;
+            height: 167px;
+        }
+    }
+    .banner{
+        margin-bottom: 50px;
     }
 }
 </style>
