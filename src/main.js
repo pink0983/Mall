@@ -4,6 +4,8 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
+// 图片懒加载
+import VueLazyLoad from 'vue-lazyload'
 
 // console.log(Vue);
 // import env from './env'
@@ -37,7 +39,9 @@ const app = createApp(App)
 app.use(router)
 app.config.globalProperties.$axios = axios;
 app.mount('#app')
-
+app.use(VueLazyLoad,{
+    loading:'/imgs/loading-svg/loading-bars.svg'
+})
 
 // Vue.use(VueAxios,axios);
 // Vue.config.productionTip = false;

@@ -17,7 +17,6 @@
     "sass-loader": "^14.1.1",
     "swiper": "^11.0.7",
     "vue": "^3.4.21",
-    "vue-awesome-swiper": "^5.0.1",
     "vue-axios": "^3.5.2",
     "vue-cookie": "^1.1.4",
     "vue-lazyload": "^3.0.0",
