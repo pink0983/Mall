@@ -148,28 +148,28 @@
                 return '￥'+ val.toFixed(2) + '元'
             }
         },
-        // onMounted(){
-        //     this.getProductList();
-        // },
-        // mounted(){
-        //     this.getProductList();
-        // },
+        onMounted(){
+            this.getProductList();
+        },
+        mounted(){
+            this.getProductList();
+        },
         methods:{
             login(){
                 // 路由跳转
                 this.$router.push('/login');
             },
-            // getProductList(){
-            //     this.$axios.get('/products',{
-            //         params:{
-            //             categoryId:'100012',
-            //             pageSize:6
-            //         }
-            //     }).then((res)=>{
-            //             this.phoneList = res.list;
+            getProductList(){
+                this.$axios.get('/products',{
+                    params:{
+                        categoryId:'100012',
+                        pageSize:6
+                    }
+                }).then((res)=>{
+                        this.phoneList = res.list;
                     
-            //     })
-            // },
+                })
+            },
             gotoCart(){
                 // 路由跳转
                 this.$router.push('/cart');
@@ -204,6 +204,7 @@
                 background-color:#FF6600 ;
                 text-align: center;
                 color: #ffffff;
+                margin-right: 0;
                 .icon-cart{
                     @include bgImg(16px,12px,'/public/imgs/icon-cart-checked.png');
                     margin-right: 4px;
